@@ -148,9 +148,9 @@ STATIC_URL = '/static/'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgres',
-        'NAME': 'db_name',
-        'USER': 'username',
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'fantasyFootball',
+        'USER': 'postgres',
         'PASSWORD': get_secret('DB_PASSWORD'),
     },
 }

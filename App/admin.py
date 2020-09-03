@@ -1,7 +1,7 @@
 from django.contrib import admin
 
 # Register your models here.
-from .models import  Quarterback,Runningback,Widereceiver,Tightend,Defense,Kicker,Player,Roster
+from .models import  Quarterback,Runningback,Widereceiver,Tightend,Defense,Kicker,Player
 from import_export.admin import ImportExportModelAdmin
 
 @admin.register(Quarterback)
@@ -34,7 +34,6 @@ class KickerAdmin(ImportExportModelAdmin):
 
 
 @admin.register(Player)
-class KickerAdmin(ImportExportModelAdmin):
-    list_display = ('name', 'team', 'position', 'bye_week')
+class PlayerAdmin(ImportExportModelAdmin):
+    list_display = ('user','id','name', 'team', 'position', 'bye_week','is_drafted')
 
-admin.site.register(Roster)

@@ -104,20 +104,15 @@ class Kicker(models.Model):
     projected_fpts = models.IntegerField(default=0)
     projected_OUTLOOK = models.TextField(default=None)
 
-
-
-
-
-
 class Player(models.Model):
+    user = models.ForeignKey(User,on_delete=models.CASCADE,null=True)
     name = models.CharField(max_length=100, blank=False)
     team = models.CharField(max_length=32)
     position = models.CharField(max_length=3, blank=False)
     bye_week = models.CharField(max_length=10, default=0)
+    is_drafted = models.BooleanField(default=False,null=True)
 
-class Roster(models.Model):
-    user = models.OneToOneField(User,on_delete=models.CASCADE)
-    player = models.ForeignKey(Player,on_delete=models.CASCADE)
+
 
 
 

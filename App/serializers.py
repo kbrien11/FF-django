@@ -58,4 +58,6 @@ class KickerSerializer(serializers.ModelSerializer):
 class PlayerSerializer(serializers.ModelSerializer):
     class Meta:
         model = Player
-        fields = ['id','name','team','position','bye_week']
+        fields = ['id','user','name','team','position','bye_week','is_drafted']
+
+
